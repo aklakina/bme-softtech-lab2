@@ -19,6 +19,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      working-directory: ./
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -27,9 +30,11 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Allow mvnw for execution
+      run: chmod u+rwx -R ./
     - name: Build with Maven
-      run: mvnw compile
+      run: ./mvnw compile
     - name: Verify the build with mvnw
-      run: mvnw verify
+      run: ./mvnw verify
     - name: Clean the agent
-      run: mvnw clean
+      run: ./mvnw clean
