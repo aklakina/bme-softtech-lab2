@@ -44,7 +44,7 @@ public class GT4500 implements SpaceShip {
     switch (firingMode) {
       case SINGLE:
         if ( torpedoStore[(lastTorpedoFired+1)%numberOfBatteries].isEmpty() ) {
-          torpedoStore[lastTorpedoFired).fire(1);
+          torpedoStore[lastTorpedoFired].fire(1);
           firingSuccess = true;
         } else {
           torpedoStore[(lastTorpedoFired+1)%numberOfBatteries].fire(1);
