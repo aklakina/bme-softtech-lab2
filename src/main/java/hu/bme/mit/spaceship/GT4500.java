@@ -12,7 +12,7 @@ public class GT4500 implements SpaceShip {
   private Integer numberOfBatteries;
 
   public GT4500() {
-    this.torpedoStore = new TorpedoStore[2]();
+    this.torpedoStore = new TorpedoStore[2];
     this.torpedoStore[0] = new TorpedoStore(10);
     this.torpedoStore[1] = new TorpedoStore(10);
     this.numberOfBatteries = 2;
